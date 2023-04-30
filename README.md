@@ -32,7 +32,7 @@ This tutorial outlines the prerequisites and installation of the open-source hel
 <img src="https://i.imgur.com/pLTUaBB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-In order to install osTicket, an online ticketing system, on a Windows 10 machine, it is necessary to enable IIS (Internet Information Services) with CGI (Common Gateway Interface). CGI is a standard protocol that allows web servers to interface with executable programs or scripts. osTicket uses PHP, a server-side scripting language, to function, and PHP requires CGI to work properly. Therefore, enabling IIS with CGI is crucial for osTicket to run smoothly.
+In order to install osTicket on a Windows 10 machine, it is necessary to enable IIS (Internet Information Services) with CGI (Common Gateway Interface). CGI is a standard protocol that allows web servers to interface with executable programs or scripts. osTicket uses PHP, a server-side scripting language, to function, and PHP requires CGI to work properly. Therefore, enabling IIS with CGI is crucial for osTicket to run smoothly.
   
 To install the PHP manager, we need to first download it from the Microsoft website. Once we have downloaded the PHP manager, we can run the installation file and follow the prompts to install it on our machine.
 </p>
@@ -93,7 +93,7 @@ To access osTicket, we need to navigate to the IIS Manager console and select th
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/rSP13bt.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
 When you first open osTicket, you may notice that some extensions aren't enabled. To enable the required extensions, we can go back to the IIS Manager console and navigate to the "Default" site, then click on the "osTicket" folder. Next, we should double-click the "PHP Manager" option and select "Enable or disable an extension". Here, we need to enable the following extensions: "php_imap.dll", "php_intl.dll", and "php_opcache.dll". After enabling these extensions, we should refresh the osTicket site in our web browser to observe the changes. With the required PHP extensions enabled, we should now be able to use osTicket without any issues.
@@ -101,41 +101,43 @@ When you first open osTicket, you may notice that some extensions aren't enabled
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/ahmkJOI.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+The next step is to rename the "ost-sampleconfig.php" file to "ost-config.php". To do this, we need to navigate to the "C:\inetpub\wwwroot\osTicket\include" directory and locate the "ost-sampleconfig.php" file. We need to rename this file to "ost-config.php" to ensure that osTicket can use the configuration file.
+
+After renaming the file, we need to assign appropriate permissions to it. We can do this by disabling inheritance and removing all permissions, then adding a new permission for "Everyone" with "All" permissions. This will ensure that osTicket can access the configuration file and read and write data as needed. We should now be able to continue setting up osTicket in our web browser. Navigate to the osTicket site and click on the "Continue" button.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/0nptbDq.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Next, we need to enter a name for our helpdesk in the designated field. This can be anything that helps us easily identify our helpdesk, such as the name of our organization or the department that the helpdesk serves.
+
+Finally, we need to enter a default email address in the appropriate field. This email address will be used to receive emails from customers who submit tickets through the osTicket system. It is important to ensure that the email address is correct and actively monitored to ensure timely responses to customer inquiries. Once we have entered the required information, the next step is to setup our database before we continue from here. 
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/DkZywB0.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Download and install HeidiSQL, then open the application and create a new session. We can do this by clicking on the "New" button in the toolbar and entering the credentials for our MySQL database. In most cases, the default login credentials are "root" for the username and "Password1" for the password.
+
+After creating a new session, we need to connect to it. Once connected, we can create a new database called "osTicket". To do this, we can right-click on the main window and select "Create new" > "Database". We should then enter "osTicket" as the database name and click on the "OK" button to create the new database. With the database created, we can now finish setting up osTicket. Click "Install Now" on the webpage.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/qOeKllL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
+We have now successfully completed the install of osTicket. Before concluding, we need to undertake a few clean-up steps. Firstly, the "setup" folder at C:\inetpub\wwwroot\osTicket\setup, which contains sensitive information, should be deleted to prevent potential security compromises.
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Secondly, it is recommended to set the permission of the "ost-config.php" file located at C:\inetpub\wwwroot\osTicket\include\ost-config.php to "Read" only to prevent unauthorized changes. This step is crucial for ensuring the security of your osTicket installation.
+
+With these final steps completed, your osTicket installation is now fully operational and secure. 
 </p>
 <br />
