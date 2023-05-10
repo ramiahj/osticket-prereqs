@@ -132,6 +132,7 @@ After creating a new session, connect to it. Once connected, create a new databa
 <p>
 You have now completed the installation of osTicket. Before concluding, there are a few clean-up steps. Firstly, the "setup" folder at C:\inetpub\wwwroot\osTicket\setup, which contains sensitive information, should be deleted to prevent potential security compromises.
 Secondly, it is recommended to set the permission of the "ost-config.php" file located at C:\inetpub\wwwroot\osTicket\include\ost-config.php to "Read" only to prevent unauthorized changes. This step is crucial for ensuring the security of your osTicket installation.
+  
 With these final steps completed, your osTicket is now fully operational and secure.
 </p>
 <br />
